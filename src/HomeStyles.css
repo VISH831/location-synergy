@@ -1,0 +1,23 @@
+/* HomeStyles.css */
+
+.homeMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+}
+
+.homeTitle {
+  font-size: 50px;
+}
+
+.homeSearchContainer {
+  text-align: center;
+  height: 50px;
+  width: 700px;
+  padding-top: 20px;
+}
+

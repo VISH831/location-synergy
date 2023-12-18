@@ -1,0 +1,17 @@
+/* ResultStyles.css */
+
+.resultMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+}
+
+.resultSearchContainer {
+  text-align: center;
+  height: 40px;
+  width: 500px;
+  padding-top: 10px;
+}
