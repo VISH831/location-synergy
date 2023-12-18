@@ -1,17 +1,16 @@
-// Import libraries
+// HomePage.js
+
 import React from 'react';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';
-
-// Import home page specific styles
 import './HomeStyles.css';
 import './App.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const handleSearchSubmit = (searchTerm) => {
+  const handleSearchSubmit = (searchTerm, lat, lng) => {
     // navigate to '/second-page' using your chosen library's function
-    navigate('/second-page', { state: { searchTerm } });
+    navigate('/second-page', { state: { searchTerm, lat, lng } });
 };
 
   return (
