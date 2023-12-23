@@ -8,20 +8,19 @@ import './App.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const handleSearchSubmit = (searchTerm, lat, lng) => {
-    // navigate to '/second-page' using your chosen library's function
-    navigate('/second-page', { state: { searchTerm, lat, lng } });
-};
+  const handleSearchSubmit = (searchTerm, lat, lng, selectedOption) => {
+    navigate('/second-page', { state: { searchTerm, lat, lng, selectedOption } });
+  };
 
   return (
     <header className="homeMain">
-			<div>
-				<h1 className="homeTitle">Location Synergy App</h1>
-				<div className="homeSearchContainer">
-					<SearchBox onSearchSubmit={handleSearchSubmit} />
-				</div>
-			</div>
-		</header>
+      <div>
+        <h1 className="homeTitle">Location Synergy App</h1>
+        <div className="homeSearchContainer">
+          <SearchBox onSearchSubmit={handleSearchSubmit} />
+        </div>
+      </div>
+    </header>
   );
 }
 
