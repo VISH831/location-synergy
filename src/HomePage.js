@@ -1,5 +1,4 @@
 // HomePage.js
-
 import React from 'react';
 import SearchBox from './SearchBox';
 import { useNavigate } from 'react-router-dom';
@@ -14,11 +13,9 @@ function HomePage() {
 
   return (
     <header className="homeMain">
-      <div>
+      <div className="homeContainer">
         <h1 className="homeTitle">Location Synergy App</h1>
-        <div className="homeSearchContainer">
-          <SearchBox onSearchSubmit={handleSearchSubmit} />
-        </div>
+        <SearchBox onSearchSubmit={handleSearchSubmit} />
       </div>
     </header>
   );
