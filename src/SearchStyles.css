@@ -29,7 +29,7 @@
 
 /* Style for search bar on Home Page */
 .searchBarHome {
-  height: 200px;
+  height: 250px;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -7,12 +7,12 @@ const SearchBox = ({ onSearchSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
   const [coordinates, setCoordinates] = useState(null);
+  const [addressComponents, setAddressComponents] = useState(null); // State to store address components
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const autoCompleteRef = useRef(null);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const searchBarClass = isHomePage ? 'searchBarHome' : 'searchBarResults';
-
 
   const loadGoogleMapsScript = () => {
     if (window.google && window.google.maps) {
@@ -49,6 +49,7 @@ const SearchBox = ({ onSearchSubmit }) => {
         const place = autocomplete.getPlace();
         if (place.geometry) {
           setSearchTerm(place.formatted_address);
+          setAddressComponents(place.address_components); // Save address components in state
           setCoordinates({
             lat: place.geometry.location.lat(),
             lng: place.geometry.location.lng()
@@ -60,8 +61,10 @@ const SearchBox = ({ onSearchSubmit }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (searchTerm && coordinates) {
-      onSearchSubmit(searchTerm, coordinates.lat, coordinates.lng, selectedOption);
+    // Use the state variable `addressComponents` to find the ZIP code
+    const zipCode = addressComponents?.find(component => component.types.includes('postal_code'))?.long_name;
+    if (searchTerm && coordinates && zipCode) {
+      onSearchSubmit(searchTerm, coordinates.lat, coordinates.lng, selectedOption, zipCode);
     }
   };
 

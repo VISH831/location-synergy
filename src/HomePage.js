@@ -7,8 +7,8 @@ import './App.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const handleSearchSubmit = (searchTerm, lat, lng, selectedOption) => {
-    navigate('/second-page', { state: { searchTerm, lat, lng, selectedOption } });
+  const handleSearchSubmit = (searchTerm, lat, lng, selectedOption, zipCode) => {
+    navigate('/second-page', { state: { searchTerm, lat, lng, selectedOption, zipCode } });
   };
 
   return (
