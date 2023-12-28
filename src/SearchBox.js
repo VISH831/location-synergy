@@ -25,7 +25,7 @@ const SearchBox = ({ onSearchSubmit }) => {
 
     const script = document.createElement('script');
     script.id = scriptId;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCeGh-2fqlSfx7lMDYhTmpoGXbCUoFF5wg&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;
     script.async = true;
     document.body.appendChild(script);
 
